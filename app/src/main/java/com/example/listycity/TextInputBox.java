@@ -3,6 +3,7 @@ package com.example.listycity;
 import java.util.*;
 import java.util.function.Consumer;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.text.InputType;
@@ -30,7 +31,7 @@ public class TextInputBox {
         inputLayout.addView(input);
 
         // Create a dialogue alert (pop-up)
-        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context)
+        AlertDialog.Builder builder = new AlertDialog.Builder(context)
                 .setTitle(title)
                 // Set the input layout to be a child of this pop-up, so it is within the pop-up and shows when the alert comes
                 .setView(inputLayout)
