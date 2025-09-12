@@ -43,15 +43,13 @@ public class TextInputBox {
                 // Add a button that just closes the box with no action
                 .setNegativeButton("Cancel", null);
 
-        Dialog dialog = builder.create();
+        dialogBox = builder.create();
 
-        // Make sure that the keyboard is brought up when the dialog box is shown
-        dialog.setOnShowListener(d -> {
+        // Make sure that the input is already focused and keyboard pops up right away
+        dialogBox.setOnShowListener(d -> {
             input.requestFocus();
-            dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
+            dialogBox.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
         });
-
-        dialogBox = dialog;
     }
 
     public void showInputBox() {
